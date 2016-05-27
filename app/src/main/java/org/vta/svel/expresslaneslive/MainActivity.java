@@ -20,10 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
     private static final String SERVER = "http://ec2-54-218-16-105.us-west-2.compute.amazonaws.com";
 
-    final Map<String, String> PLAZAS  = new HashMap<String, String>(){{
-        put("CLW", getString(R.string.CLW));
-        put("FSE", getString(R.string.FSE));
-    }};
+    Map<String, String> PLAZAS;
 
 
     private static WebSocketController websocketController;
@@ -33,6 +30,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        PLAZAS  = new HashMap<String, String>(){{
+            put("CLW", getString(R.string.CLW));
+            put("FSE", getString(R.string.FSE));
+        }};
 
         setContentView(R.layout.activity_main);
     }
